@@ -57,11 +57,15 @@ export const VisualizeData = observer(() => {
     URL.revokeObjectURL(url);
   };
 
+  const cleanData = () => {
+    parameterStore.setNodes([]);
+  };
   return (
     <div className="m-3 d-flex flex-column align-items-center">
       <div className="d-flex justify-content-center w-100 my-3 gap-3">
         <Button onClick={removeDuplicates}>Remove Duplicates</Button>
         <Button onClick={downloadData}>Download Data</Button>
+        <Button onClick={cleanData}>Clean Data</Button>
       </div>
       <div style={{ maxHeight: "80vh", overflowY: "auto", width: "100%" }}>
         <Table striped bordered hover size="sm" className="equal-width-table">
